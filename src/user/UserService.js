@@ -7,6 +7,10 @@ const save = async (body) => {
   await User.create(user);
 };
 
-const UserService = { save };
+const findByEmail = async (email) => {
+  return await User.findOne({ where: { email } });
+};
+
+const UserService = { save, findByEmail };
 
 export { UserService };
